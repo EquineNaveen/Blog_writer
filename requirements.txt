@@ -1,2 +1,7 @@
+# filepath: d:\Blog_writer\requirements.txt
 crewai
 crewai_tools
+python-dotenv
+embedchain
+langchain_huggingface
+sentence_transformers
