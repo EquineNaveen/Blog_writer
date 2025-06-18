@@ -24,6 +24,7 @@ music_researcher = Agent(
         "An expert in analyzing music video content, genres, artists, and trends on YouTube. "
         "You specialize in understanding music narratives, extracting key lyrics, artist commentary, and musical insights for content creation."
     ),
+    llm=model,
     tools=[yt_tool],
     allow_delegation=True
 )
@@ -38,6 +39,7 @@ music_blog_writer = Agent(
         "A passionate music writer with a knack for making musical concepts, artist stories, and song meanings accessible. "
         "You excel at transforming raw transcripts, lyrics, and research into captivating, well-structured blog articles that engage and inform music lovers."
     ),
+    llm=model,
     tools=[yt_tool],
     allow_delegation=False
 )
