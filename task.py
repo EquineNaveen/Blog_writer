@@ -1,6 +1,6 @@
 from crewai import Task
 from tools import yt_tool
-from agents import blog_researcher, blog_writer
+from agents import music_researcher, music_blog_writer
 
 # ---------------- Research Task ----------------
 music_research_task = Task(
@@ -13,7 +13,7 @@ music_research_task = Task(
     "from the selected YouTube music video on the topic '{topic}'."
   ),
   tools=[yt_tool],
-  agent=blog_researcher,
+  agent=music_researcher,
 )
 
 # ---------------- Music Blog Writing Task ----------------
@@ -27,7 +27,7 @@ music_write_task = Task(
     "clear explanations of musical elements, and a well-structured narrative formatted for publication."
   ),
   tools=[yt_tool],
-  agent=blog_writer,
+  agent=music_blog_writer,
   async_execution=False,
   output_file='new-blog-post.md'
 )
