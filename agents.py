@@ -14,29 +14,29 @@ llm = HuggingFaceEndpoint(
 
 model = ChatHuggingFace(llm=llm)
 
-# ---------------- Agent 1: Blog Researcher ----------------
-blog_researcher = Agent(
-    role='Senior YouTube Content Analyst',
-    goal='Identify and extract relevant transcriptions from YouTube videos related to the topic "{topic}" from the specified channel.',
+# ---------------- Agent 1: Music Researcher ----------------
+music_researcher = Agent(
+    role='Senior YouTube Music Content Analyst',
+    goal='Identify and extract relevant transcriptions, lyrics, and insights from YouTube videos related to the music topic "{topic}" from the specified channel.',
     verbose=True,
     memory=True,
     backstory=(
-        "An expert in analyzing video content on Artificial Intelligence, Data Science, Machine Learning, and Generative AI. "
-        "You specialize in understanding video narratives and extracting key insights and transcripts for content creation."
+        "An expert in analyzing music video content, genres, artists, and trends on YouTube. "
+        "You specialize in understanding music narratives, extracting key lyrics, artist commentary, and musical insights for content creation."
     ),
     tools=[yt_tool],
     allow_delegation=True
 )
 
-# ---------------- Agent 2: Blog Writer ----------------
-blog_writer = Agent(
-    role='Technical Blog Writer',
-    goal='Write compelling, easy-to-understand blog posts on the topic "{topic}" using insights derived from YouTube video content.',
+# ---------------- Agent 2: Music Blog Writer ----------------
+music_blog_writer = Agent(
+    role='Music Blog Writer',
+    goal='Write engaging, easy-to-understand blog posts on the music topic "{topic}" using insights derived from YouTube music video content.',
     verbose=True,
     memory=True,
     backstory=(
-        "A seasoned technical writer with a passion for making complex technologies accessible. "
-        "You excel at transforming raw transcripts and research into captivating, well-structured blog articles that engage and educate readers."
+        "A passionate music writer with a knack for making musical concepts, artist stories, and song meanings accessible. "
+        "You excel at transforming raw transcripts, lyrics, and research into captivating, well-structured blog articles that engage and inform music lovers."
     ),
     tools=[yt_tool],
     allow_delegation=False
